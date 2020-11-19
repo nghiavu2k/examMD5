@@ -1,10 +1,13 @@
 <h1>Book list</h1>
 
+
+<div>List have {{books.length}} books</div>
 <button type="button" [routerLink]="['create']">Add</button>
 <h5>Click on title for details</h5>
 <table class="table">
     <thead class="table-active">
         <tr>
+            <td>#</td>
             <td>Title</td>
             <td>Author</td>
             <td>Description</td>
@@ -14,6 +17,7 @@
     </thead>
     <tbody>
         <tr *ngFor="let book of books; let i = index">
+            <td>{{i+1}}</td>
             <td [routerLink]="['details', book.id]">{{book.title}}</td>
             <td>{{book.author}}</td>
             <td>{{book.description}}</td>
