@@ -18,7 +18,7 @@
             <td>{{book.author}}</td>
             <td>{{book.description}}</td>
 
-            <td><button type="button" (click)="deleteBook(book.id)" class="btn btn-danger">Delete</button></td>
+            <td><button type="button" [routerLink]="['/books/delete', book.id]" class="btn btn-danger">Delete</button></td>
             <td><button type="button" [routerLink]="['/books/update', book.id]" class="btn btn-success">Edit</button></td>
             <!-- <td><button type="button" [routerLink]="['/user', user.id]" class="btn btn-info">Detail</button></td> -->
         </tr>

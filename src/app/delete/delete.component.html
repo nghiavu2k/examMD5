@@ -1,0 +1,16 @@
+<button type="button" routerLink="">Back</button>
+
+<table class="table">
+    <tr class="table-dark">
+       <td>Title</td>
+       <td>Author</td>
+       <td>Description</td>   
+    </tr>
+    <tr>
+        <td>{{currentBook.title}}</td>
+        <td>{{currentBook.author}}</td>
+        <td>{{currentBook.description}}</td>
+    </tr>
+</table>
+
+<button (click)="deleteBook(currentBook.id)">Delete</button>
