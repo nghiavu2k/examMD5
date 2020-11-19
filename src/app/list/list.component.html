@@ -1,0 +1,27 @@
+<h1>Book list</h1>
+
+<button type="button" [routerLink]="['create']">Add</button>
+<h5>Click on title for details</h5>
+<table class="table">
+    <thead class="table-active">
+        <tr>
+            <td>Title</td>
+            <td>Author</td>
+            <td>Description</td>
+            <td>Delete</td>
+            <td>Edit</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let book of books; let i = index">
+            <td [routerLink]="['details', book.id]">{{book.title}}</td>
+            <td>{{book.author}}</td>
+            <td>{{book.description}}</td>
+
+            <td><button type="button" (click)="deleteBook(book.id)" class="btn btn-danger">Delete</button></td>
+            <td><button type="button" [routerLink]="['/books/update', book.id]" class="btn btn-success">Edit</button></td>
+            <!-- <td><button type="button" [routerLink]="['/user', user.id]" class="btn btn-info">Detail</button></td> -->
+        </tr>
+    </tbody>
+
+</table>
